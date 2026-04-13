@@ -1,0 +1,5 @@
+# PDF 파싱·크롭
+pymupdf>=1.24.0
+Pillow>=10.0.0
+# GROBID HTTP (선택: 로컬 Docker 8070)
+requests>=2.31.0

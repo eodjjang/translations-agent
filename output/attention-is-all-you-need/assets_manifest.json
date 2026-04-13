@@ -1,0 +1,22 @@
+{
+  "assets": [
+    {
+      "file": "1706.03762v7_p3_img1.png",
+      "type": "figure",
+      "page": 3,
+      "caption": "Figure 1: The Transformer - model architecture."
+    },
+    {
+      "file": "1706.03762v7_p4_img2.png",
+      "type": "figure",
+      "page": 4,
+      "caption": "Figure 2 (left): Scaled Dot-Product Attention."
+    },
+    {
+      "file": "1706.03762v7_p4_img3.png",
+      "type": "figure",
+      "page": 4,
+      "caption": "Figure 2 (right): Multi-Head Attention."
+    }
+  ]
+}

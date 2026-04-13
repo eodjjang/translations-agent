@@ -1,0 +1,17 @@
+{
+  "Transformer": { "ko": "트랜스포머", "context": "모델명" },
+  "attention": { "ko": "어텐션", "context": "메커니즘" },
+  "self-attention": { "ko": "자기-어텐션", "context": "메커니즘" },
+  "multi-head attention": { "ko": "다중 헤드 어텐션", "context": "메커니즘" },
+  "scaled dot-product attention": { "ko": "스케일된 내적 어텐션", "context": "메커니즘" },
+  "encoder-decoder": { "ko": "인코더-디코더", "context": "구조" },
+  "sequence transduction": { "ko": "순열 변환", "context": "과제" },
+  "BLEU": { "ko": "BLEU", "context": "평가지표" },
+  "byte-pair encoding": { "ko": "바이트 쌍 인코딩(Byte-pair encoding)", "context": "하위단어" },
+  "word-piece": { "ko": "워드피스(word-piece)", "context": "토큰화" },
+  "layer normalization": { "ko": "층 정규화(layer normalization)", "context": "정규화" },
+  "positional encoding": { "ko": "위치 인코딩(positional encoding)", "context": "위치정보" },
+  "label smoothing": { "ko": "레이블 스무딩(label smoothing)", "context": "정규화" },
+  "beam search": { "ko": "빔 탐색(beam search)", "context": "추론" },
+  "constituency parsing": { "ko": "구문 분석(constituency parsing)", "context": "NLP" }
+}

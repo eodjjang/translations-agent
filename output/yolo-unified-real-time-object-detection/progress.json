@@ -1,0 +1,15 @@
+{
+  "paper": "1506.02640v5.pdf",
+  "slug": "yolo-unified-real-time-object-detection",
+  "current_step": 6,
+  "completed_sections": [
+    "extract",
+    "glossary",
+    "translate",
+    "typst"
+  ],
+  "assets_extracted": true,
+  "glossary_generated": true,
+  "typst_compiled": true,
+  "notes": "원문 References는 번역하지 않음. 표·그림은 PDF 크롭 에셋 사용."
+}

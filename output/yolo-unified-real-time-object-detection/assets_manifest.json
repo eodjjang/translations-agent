@@ -1,0 +1,52 @@
+{
+  "assets": [
+    {
+      "file": "1506.02640v5_p1_img1.png",
+      "type": "figure",
+      "page": 1,
+      "caption": null
+    },
+    {
+      "file": "1506.02640v5_p1_img2.png",
+      "type": "figure",
+      "page": 1,
+      "caption": null
+    },
+    {
+      "file": "1506.02640v5_p2_img3.png",
+      "type": "figure",
+      "page": 2,
+      "caption": null
+    },
+    {
+      "file": "1506.02640v5_p2_img4.png",
+      "type": "figure",
+      "page": 2,
+      "caption": null
+    },
+    {
+      "file": "1506.02640v5_p2_img5.png",
+      "type": "figure",
+      "page": 2,
+      "caption": null
+    },
+    {
+      "file": "1506.02640v5_p8_img6.jpeg",
+      "type": "figure",
+      "page": 8,
+      "caption": null
+    },
+    {
+      "file": "1506.02640v5_p8_img7.png",
+      "type": "figure",
+      "page": 8,
+      "caption": null
+    },
+    {
+      "file": "1506.02640v5_p8_img8.png",
+      "type": "figure",
+      "page": 8,
+      "caption": null
+    }
+  ]
+}

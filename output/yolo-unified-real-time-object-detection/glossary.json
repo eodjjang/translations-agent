@@ -1,0 +1,18 @@
+{
+  "YOLO": { "ko": "YOLO", "context": "You Only Look Once — 객체 검출기 이름" },
+  "object detection": { "ko": "객체 검출", "context": "과제명" },
+  "bounding box": { "ko": "경계 상자", "context": "검출 출력" },
+  "mAP": { "ko": "mAP", "context": "mean average precision" },
+  "IOU": { "ko": "IOU", "context": "Intersection over Union" },
+  "non-maximal suppression": { "ko": "비최대 억제", "context": "후처리" },
+  "PASCAL VOC": { "ko": "PASCAL VOC", "context": "데이터셋" },
+  "ImageNet": { "ko": "ImageNet", "context": "데이터셋" },
+  "convolutional neural network": { "ko": "합성곱 신경망", "context": "모델" },
+  "region proposal": { "ko": "영역 제안", "context": "R-CNN 계열" },
+  "DPM": { "ko": "DPM", "context": "Deformable Parts Model" },
+  "R-CNN": { "ko": "R-CNN", "context": "검출기" },
+  "Fast R-CNN": { "ko": "Fast R-CNN", "context": "검출기" },
+  "Faster R-CNN": { "ko": "Faster R-CNN", "context": "검출기" },
+  "GoogLeNet": { "ko": "GoogLeNet", "context": "분류 네트워크" },
+  "Darknet": { "ko": "Darknet", "context": "프레임워크" }
+}

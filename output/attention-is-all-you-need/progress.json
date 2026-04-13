@@ -1,0 +1,10 @@
+{
+  "paper": "1706.03762v7.pdf",
+  "current_step": 6,
+  "completed_sections": ["intro", "background", "model", "why", "training", "results", "conclusion", "refs", "appendix"],
+  "pending_sections": [],
+  "assets_extracted": true,
+  "glossary_generated": true,
+  "typst_compiled": true,
+  "grobid_available": false
+}
