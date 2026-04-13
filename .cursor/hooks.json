@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "command": "python .cursor/hooks/validate_router.py",
+        "matcher": "Write",
+        "timeout": 30
+      }
+    ]
+  }
+}
