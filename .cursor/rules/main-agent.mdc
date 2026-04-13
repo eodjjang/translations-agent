@@ -1,5 +1,5 @@
 ---
-description: 학술 논문 PDF→한국어 Typst 파이프라인 오케스트레이션 (워크플로 Step 1~6)
+description: 영문 학술 자료(PDF/PPTX)→한국어 번역 파이프라인 오케스트레이션
 alwaysApply: true
 ---
 
@@ -7,65 +7,106 @@ alwaysApply: true
 
 ## 목적
 
-영문 학술 논문 PDF를 한국어로 번역하고 Typst로 재조판한다. 실행 환경은 Cursor IDE 내부이며, **결정론적 작업은 `scripts/`**, **추론·번역·Typst 생성은 에이전트**가 담당한다.
+영문 학술 자료(PDF 논문 또는 PPTX 발표자료)를 한국어로 번역한다. PDF는 Typst로 재조판하고, PPTX는 원본 레이아웃을 유지한 채 텍스트만 교체한다. 실행 환경은 Cursor IDE 내부이며, **결정론적 작업은 `scripts/`**, **추론·번역은 에이전트**가 담당한다.
+
+## 입력 형식 분기
+
+`input/` 폴더의 파일 확장자로 파이프라인을 결정한다.
+
+| 확장자 | 파이프라인 | 출력물 |
+|--------|-----------|--------|
+| `.pdf` | PDF 워크플로 (Step 1~6) | `final_translated.pdf` (Typst 재조판) |
+| `.pptx` | PPT 워크플로 (PPT Step 1~5) | `final_translated.pptx` (원본 레이아웃 유지) |
 
 ## 입출력 경로 (프로젝트 루트 기준)
 
-- 입력 PDF: `input/` (한 번에 한 편)
-- 출력: `output/{논문슬러그}/` — 논문별 하위 폴더에 결과물 저장
-  - `output/{논문슬러그}/assets/` — 그림·표 이미지
-  - `output/{논문슬러그}/src/` — Typst 소스
-  - `output/{논문슬러그}/glossary.json`
-  - `output/{논문슬러그}/assets_manifest.json`
-  - `output/{논문슬러그}/progress.json`
-  - `output/{논문슬러그}/final_translated.pdf`
-- 논문슬러그: 논문 제목의 영문 slug (예: `attention-is-all-you-need`)
-- 폰트: `fonts/` (Pretendard 등; 없으면 Typst 기본 + 사용자 안내)
+- 입력: `input/` (한 번에 한 편, `.pdf` 또는 `.pptx`)
+- 출력: `output/{슬러그}/` — 자료별 하위 폴더에 결과물 저장
+  - `output/{슬러그}/glossary.json`
+  - `output/{슬러그}/progress.json`
+  - **(PDF 전용)**
+    - `output/{슬러그}/assets/` — 그림·표 이미지
+    - `output/{슬러그}/src/` — Typst 소스
+    - `output/{슬러그}/assets_manifest.json`
+    - `output/{슬러그}/final_translated.pdf`
+  - **(PPT 전용)**
+    - `output/{슬러그}/slides_manifest.json` — 슬라이드별 텍스트 메타데이터
+    - `output/{슬러그}/final_translated.pptx`
+- 슬러그: 자료 제목의 영문 slug (예: `attention-is-all-you-need`)
+- 폰트: `fonts/` (Pretendard 등; 없으면 기본 폰트 + 사용자 안내)
 
-## 워크플로 (반드시 순서 준수)
+---
+
+## PDF 워크플로 (반드시 순서 준수)
 
 1. **Step 1 — PDF 분석/구조 추출**: `scripts/pdf_extractor.py` 또는 동등 파이프라인으로 구조·좌표 추출. GROBID 사용 시 Docker `8070` 포트 가정. 불가 시 PyMuPDF 단독 + 에이전트가 구조 검증.
 2. **Step 2 — 비텍스트 추출**: 표·블록 수식·알고리즘/의사코드는 **텍스트 추출 없이 이미지 크롭만**. 표는 PyMuPDF `page.get_pixmap(clip=rect)`로 해당 영역을 직접 크롭. **그림(Figure)도 도식·사진만 포함하도록 크롭**하고, 주변 본문·헤더·영문 캡션은 이미지에 넣지 않는다(좌표는 텍스트 블록 bbox·임베디드 이미지 rect로 결정). 캡션은 메타데이터로 분리 → `assets_manifest.json`.
 3. **Step 3 — 이미지 추출 휴먼 리뷰**: 터미널에 체크리스트 출력 후 **일시 정지**. 사용자가 `output/assets/` 확인. 승인("OK"/"승인")까지 Step 4로 진행하지 않음. 수정 요청 시 Step 2로 회귀.
-4. **Step 3.5 — 용어집**: `glossary.json` 자동 생성 (논문별).
+4. **Step 3.5 — 용어집**: `glossary.json` 자동 생성.
 5. **Step 4 — 2패스 번역**: 섹션 단위. `translator` 규칙 준수. 참고문헌은 번역하지 않음. 인라인 수식 `$...$` 보존.
 6. **Step 5 — Typst 생성·컴파일**: `typst-coder` 규칙. `typst compile`은 스크립트 실행. 실패 시 에러 로그 분석 후 소스 수정, **최대 3회**. 초과 시 중단·사용자 알림. 조판 시 **한글 가독성**: 줄간·단락 간 여유, 배열(왼쪽 정렬), `hyphenate: false`, 필요 시 `#show regex("[가-힣a-zA-Z0-9]+"): it => box(it)`로 토큰 단위 줄바꿈 제한(`typst-coder` 참고).
 7. **Step 6 — 최종 휴먼 리뷰**: `final_translated.pdf` 확인. 피드백 시 부분 수정·재컴파일. "완료"로 종료.
 
+---
+
+## PPT 워크플로 (반드시 순서 준수)
+
+PPT는 원본 레이아웃·서식을 유지하면서 **텍스트만 한국어로 교체**한다. Typst 재조판·이미지 크롭은 수행하지 않는다.
+
+1. **PPT Step 1 — 슬라이드 텍스트 추출**: `scripts/pptx_extractor.py`로 각 슬라이드의 텍스트 프레임을 순회하여 슬라이드 번호·도형 ID·원문 텍스트·폰트 정보를 `slides_manifest.json`으로 추출. 이미지/도표 내부 텍스트는 번역 대상 아님.
+2. **PPT Step 2 — 용어집**: `glossary.json` 자동 생성. 추출된 전체 텍스트에서 핵심 전문 용어를 식별.
+3. **PPT Step 3 — 2패스 번역**: 슬라이드 단위. `translator` 규칙(PPT 모드) 준수. References 슬라이드는 번역하지 않음.
+4. **PPT Step 4 — 번역 텍스트 삽입**: `scripts/pptx_writer.py`로 원본 PPTX를 열어 run 단위로 텍스트만 교체. **서식(폰트 크기·굵기·이탤릭·색상) 보존**이 핵심. 한글 폰트 대응(Malgun Gothic 등)으로 자동 교체. 출력: `final_translated.pptx`.
+5. **PPT Step 5 — 최종 휴먼 리뷰**: `final_translated.pptx` 확인. 피드백 시 해당 슬라이드만 재번역·재삽입. "완료"로 종료.
+
+---
+
 ## 진행 상태
 
-- `output/{논문슬러그}/progress.json`을 읽고 갱신한다. 세션 재개 시 마지막 완료 단계 이후부터 이어간다.
+- `output/{슬러그}/progress.json`을 읽고 갱신한다. 세션 재개 시 마지막 완료 단계 이후부터 이어간다.
+- `progress.json`에 `"source_type": "pdf"` 또는 `"pptx"`를 기록하여 파이프라인을 식별한다.
 
 ## 휴먼 리뷰 메시지 템플릿
 
-### Step 3 (이미지)
+### PDF — Step 3 (이미지)
 
 ```
 [이미지 추출 리뷰]
 - 총 추출 에셋: (Figure/Table/Equation/Algorithm 개수)
-- 출력 경로: ./output/{논문슬러그}/assets/
+- 출력 경로: ./output/{슬러그}/assets/
 - 확인 사항: 잘림, 누락, 잘못된 분류
 - 승인: "OK" 또는 "승인" / 수정: 구체적 피드백
 ```
 
-### Step 6 (완료)
+### PDF — Step 6 (완료)
 
 ```
 [번역 완료]
-- 최종 PDF: ./output/{논문슬러그}/final_translated.pdf
-- Typst 소스: ./output/{논문슬러그}/src/main.typ
-- 용어집: ./output/{논문슬러그}/glossary.json
-- 에셋: ./output/{논문슬러그}/assets/
+- 최종 PDF: ./output/{슬러그}/final_translated.pdf
+- Typst 소스: ./output/{슬러그}/src/main.typ
+- 용어집: ./output/{슬러그}/glossary.json
+- 에셋: ./output/{슬러그}/assets/
 - 수정 피드백 또는 "완료"
+```
+
+### PPT — Step 5 (완료)
+
+```
+[PPT 번역 완료]
+- 최종 PPTX: ./output/{슬러그}/final_translated.pptx
+- 용어집: ./output/{슬러그}/glossary.json
+- 총 슬라이드: N장 (번역 대상: M장, 제외: K장)
+- 수정이 필요하면 슬라이드 번호와 피드백을 입력해 주세요. "완료"를 입력하면 종료합니다.
 ```
 
 ## 에러 처리 요약
 
 - PDF 파싱 실패(암호화·스캔만): 중단·원인 안내.
-- 번역 자기검증 실패: 해당 섹션 재시도 최대 2회 후 경고·진행.
-- Typst 컴파일: 3회 실패 시 중단.
+- PPTX 파싱 실패(파일 손상·비 OOXML 형식): 중단·원인 안내.
+- 번역 자기검증 실패: 해당 섹션/슬라이드 재시도 최대 2회 후 경고·진행.
+- Typst 컴파일(PDF만): 3회 실패 시 중단.
 
 ## 역할 분리
 
-- 스크립트: I/O, PDF 파싱/크롭, CLI, 유니코드→Typst 기본 매핑.
-- 에이전트: 구조 검증, 번역·윤문, Typst 마크업 작성, 에러 로그 기반 수정.
+- 스크립트: I/O, PDF 파싱/크롭, PPTX 텍스트 추출/삽입, CLI, 유니코드→Typst 기본 매핑.
+- 에이전트: 구조 검증, 번역·윤문, Typst 마크업 작성(PDF), 에러 로그 기반 수정.
