@@ -1,0 +1,12 @@
+{
+  "source_type": "pptx",
+  "source_file": "input/EAL-Sample-Slideset-2020.pptx",
+  "slug": "EAL-Sample-Slideset-2020",
+  "completed_steps": [
+    "PPT Step 1 extract",
+    "PPT Step 2 glossary",
+    "PPT Step 3 translate",
+    "PPT Step 4 write"
+  ],
+  "last_updated": "2026-04-13"
+}

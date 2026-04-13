@@ -1,0 +1,846 @@
+{
+  "total_slides": 10,
+  "slides": [
+    {
+      "slide_number": 1,
+      "shapes": [
+        {
+          "shape_id": 3,
+          "shape_name": "Title 1",
+          "text": "Lecture Title\n\nSubject Code",
+          "paragraphs": [
+            {
+              "text": "Lecture Title",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Lecture Title",
+                  "font_name": null,
+                  "font_size_pt": 54.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            },
+            {
+              "text": "Subject Code",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Subject ",
+                  "font_name": null,
+                  "font_size_pt": 28.0,
+                  "bold": null,
+                  "italic": null
+                },
+                {
+                  "text": "Code",
+                  "font_name": null,
+                  "font_size_pt": 28.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 2,
+      "shapes": [
+        {
+          "shape_id": 17411,
+          "shape_name": "Text Placeholder 3",
+          "text": "Session Overview",
+          "paragraphs": [
+            {
+              "text": "Session Overview",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Session Overview",
+                  "font_name": "Arial",
+                  "font_size_pt": 48.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "shape_id": 5,
+          "shape_name": "TextBox 4",
+          "text": "Introduction\nTopic One\nTopic Two\nTopic Three\nReview\nKey Terms",
+          "paragraphs": [
+            {
+              "text": "Introduction",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Introduction",
+                  "font_name": null,
+                  "font_size_pt": 40.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Topic One",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Topic One",
+                  "font_name": null,
+                  "font_size_pt": 40.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Topic Two",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Topic Two",
+                  "font_name": null,
+                  "font_size_pt": 40.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Topic Three",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Topic Three",
+                  "font_name": null,
+                  "font_size_pt": 40.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Review",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Review",
+                  "font_name": null,
+                  "font_size_pt": 40.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Key Terms",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Key Terms",
+                  "font_name": null,
+                  "font_size_pt": 40.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 3,
+      "shapes": [
+        {
+          "shape_id": 10242,
+          "shape_name": "Content Placeholder 1",
+          "text": "Here you may like to:\nReview last lecture content\nProvide background information pertinent to the lecture\nHighlight new key terms\nEngage the audience by activating their background knowledge (Does anyone know what xyz is?)\n\nTips:\nKeep font above 22 point\nUse short statements\nAvoid paragraphs and long sentences\nAvoid colours such as red, orange, green",
+          "paragraphs": [
+            {
+              "text": "Here you may like to:",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Here you may like to:",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Review last lecture content",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Review last lecture content",
+                  "font_name": "Arial",
+                  "font_size_pt": 28.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Provide background information pertinent to the lecture",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Provide background information pertinent to the lecture",
+                  "font_name": "Arial",
+                  "font_size_pt": 28.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Highlight new key terms",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Highlight new key terms",
+                  "font_name": "Arial",
+                  "font_size_pt": 28.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Engage the audience by activating their background knowledge (Does anyone know what xyz is?)",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Engage the audience by activating their background knowledge (Does anyone know what xyz is?)",
+                  "font_name": "Arial",
+                  "font_size_pt": 28.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            },
+            {
+              "text": "Tips:",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Tips:",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Keep font above 22 point",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Keep font above 22 point",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Use short statements",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Use short statements",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Avoid paragraphs and long sentences",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Avoid paragraphs and long sentences",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Avoid colours such as red, orange, green",
+              "level": 1,
+              "runs": [
+                {
+                  "text": "Avoid ",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                },
+                {
+                  "text": "colours",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                },
+                {
+                  "text": " such as red, orange, green",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "shape_id": 4,
+          "shape_name": "Text Placeholder 3",
+          "text": "Introduction",
+          "paragraphs": [
+            {
+              "text": "Introduction",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Introduction",
+                  "font_name": "Arial",
+                  "font_size_pt": 48.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 4,
+      "shapes": [
+        {
+          "shape_id": 11266,
+          "shape_name": "Content Placeholder 1",
+          "text": "Using a visual element will activate background information \nVisual cues activate memory processing",
+          "paragraphs": [
+            {
+              "text": "Using a visual element will activate background information ",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Using a visual element will activate background information ",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Visual cues activate memory processing",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Visual cues activate memory processing",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "shape_id": 4,
+          "shape_name": "Text Placeholder 3",
+          "text": "Topic One",
+          "paragraphs": [
+            {
+              "text": "Topic One",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Topic One",
+                  "font_name": "Arial",
+                  "font_size_pt": 48.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 5,
+      "shapes": [
+        {
+          "shape_id": 12290,
+          "shape_name": "Content Placeholder 1",
+          "text": "Add your text here",
+          "paragraphs": [
+            {
+              "text": "Add your text here",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Add your text here",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "shape_id": 4,
+          "shape_name": "Text Placeholder 3",
+          "text": "Topic Two",
+          "paragraphs": [
+            {
+              "text": "Topic Two",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Topic Two",
+                  "font_name": "Arial",
+                  "font_size_pt": 48.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "shapes": [
+        {
+          "shape_id": 13314,
+          "shape_name": "Content Placeholder 1",
+          "text": "Add your text here",
+          "paragraphs": [
+            {
+              "text": "Add your text here",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Add your text here",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "shape_id": 4,
+          "shape_name": "Text Placeholder 3",
+          "text": "Topic Three",
+          "paragraphs": [
+            {
+              "text": "Topic Three",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Topic Three",
+                  "font_name": "Arial",
+                  "font_size_pt": 48.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 7,
+      "shapes": [
+        {
+          "shape_id": 14338,
+          "shape_name": "Content Placeholder 1",
+          "text": "Add your text here",
+          "paragraphs": [
+            {
+              "text": "Add your text here",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Add your text here",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "shape_id": 4,
+          "shape_name": "Text Placeholder 3",
+          "text": "Topic Four",
+          "paragraphs": [
+            {
+              "text": "Topic Four",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Topic Four",
+                  "font_name": "Arial",
+                  "font_size_pt": 48.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 8,
+      "shapes": [
+        {
+          "shape_id": 15362,
+          "shape_name": "Content Placeholder 1",
+          "text": "Here you may like to highlight the key points you have discussed\nGuide the students to the key points\nAlways end with a review based on ‘Session Overview’ slide",
+          "paragraphs": [
+            {
+              "text": "Here you may like to highlight the key points you have discussed",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Here you may like to highlight the key points you have discussed",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Guide the students to the key points",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Guide the students to the key points",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "Always end with a review based on ‘Session Overview’ slide",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Always end with a review based on ‘Session Overview’ slide",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        },
+        {
+          "shape_id": 4,
+          "shape_name": "Text Placeholder 3",
+          "text": "Session Review",
+          "paragraphs": [
+            {
+              "text": "Session Review",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Session Review",
+                  "font_name": "Arial",
+                  "font_size_pt": 48.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 9,
+      "shapes": [
+        {
+          "shape_id": 16386,
+          "shape_name": "Content Placeholder 1",
+          "text": "Here you may wish to list (or define) key terms from the lecture material.",
+          "paragraphs": [
+            {
+              "text": "Here you may wish to list (or define) key terms from the lecture material.",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Here you may wish to list (or define) key terms from the lecture material.",
+                  "font_name": "Arial",
+                  "font_size_pt": 24.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        },
+        {
+          "shape_id": 4,
+          "shape_name": "Text Placeholder 3",
+          "text": "Key Terminology",
+          "paragraphs": [
+            {
+              "text": "Key Terminology",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Key Terminology",
+                  "font_name": "Arial",
+                  "font_size_pt": 48.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slide_number": 10,
+      "shapes": [
+        {
+          "shape_id": 10242,
+          "shape_name": "Title 2",
+          "text": "Contact Me",
+          "paragraphs": [
+            {
+              "text": "Contact Me",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Contact Me",
+                  "font_name": "Arial",
+                  "font_size_pt": null,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "shape_id": 10243,
+          "shape_name": "Content Placeholder 4",
+          "text": "Your Name Here\nyour.email@jcu.edu.au\nT:  Office Phone Number\nRoom: Office Room Number \n\nMy consult hours are:",
+          "paragraphs": [
+            {
+              "text": "Your Name Here",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Your Name Here",
+                  "font_name": null,
+                  "font_size_pt": null,
+                  "bold": true,
+                  "italic": null,
+                  "color_rgb": "000000"
+                }
+              ]
+            },
+            {
+              "text": "your.email@jcu.edu.au",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "y",
+                  "font_name": null,
+                  "font_size_pt": null,
+                  "bold": true,
+                  "italic": null,
+                  "color_rgb": "000000"
+                },
+                {
+                  "text": "our.email@jcu.edu.au",
+                  "font_name": null,
+                  "font_size_pt": null,
+                  "bold": true,
+                  "italic": null,
+                  "color_rgb": "000000"
+                }
+              ]
+            },
+            {
+              "text": "T:  Office Phone Number",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "T",
+                  "font_name": null,
+                  "font_size_pt": null,
+                  "bold": true,
+                  "italic": null,
+                  "color_rgb": "000000"
+                },
+                {
+                  "text": ": ",
+                  "font_name": null,
+                  "font_size_pt": null,
+                  "bold": true,
+                  "italic": null,
+                  "color_rgb": "000000"
+                },
+                {
+                  "text": " Office Phone Number",
+                  "font_name": null,
+                  "font_size_pt": null,
+                  "bold": true,
+                  "italic": null,
+                  "color_rgb": "000000"
+                }
+              ]
+            },
+            {
+              "text": "Room: Office Room Number ",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "Room: Office Room Number ",
+                  "font_name": null,
+                  "font_size_pt": null,
+                  "bold": true,
+                  "italic": null,
+                  "color_rgb": "000000"
+                }
+              ]
+            },
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            },
+            {
+              "text": "My consult hours are:",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "My consult hours are:",
+                  "font_name": null,
+                  "font_size_pt": null,
+                  "bold": true,
+                  "italic": null,
+                  "color_rgb": "000000"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "shape_id": 2,
+          "shape_name": "TextBox 1",
+          "text": "If you email me please follow correct etiquette:\nhttps://www.jcu.edu.au/__data/assets/pdf_file/0003/872544/JCU-Email-Etiquette.pdf",
+          "paragraphs": [
+            {
+              "text": "If you email me please follow correct etiquette:",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "If you email me please follow correct etiquette:",
+                  "font_name": null,
+                  "font_size_pt": 16.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "https://www.jcu.edu.au/__data/assets/pdf_file/0003/872544/JCU-Email-Etiquette.pdf",
+              "level": 0,
+              "runs": [
+                {
+                  "text": "https://www.jcu.edu.au/__",
+                  "font_name": null,
+                  "font_size_pt": 16.0,
+                  "bold": null,
+                  "italic": null
+                },
+                {
+                  "text": "data/assets/pdf_file/0003/872544/JCU-Email-Etiquette.pdf",
+                  "font_name": null,
+                  "font_size_pt": 16.0,
+                  "bold": null,
+                  "italic": null
+                }
+              ]
+            },
+            {
+              "text": "",
+              "level": 0,
+              "runs": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

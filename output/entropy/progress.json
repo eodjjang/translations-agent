@@ -1,0 +1,14 @@
+{
+  "source_type": "pdf",
+  "paper": "entropy.pdf",
+  "slug": "entropy",
+  "current_step": 6,
+  "priority_range_pages": "1-18",
+  "priority_notes": "p1-5 LLM 학술 재번역; p3 수식 일부 원문 유지; p6-18 페이지 MT 후 적용; p19-55 기존 초안",
+  "completed_sections": ["extract", "priority_retranslate_batch1", "typst_compile"],
+  "assets_extracted": true,
+  "embedded_images": 0,
+  "glossary_generated": true,
+  "typst_compiled": true,
+  "grobid_available": false
+}

@@ -43,9 +43,57 @@ alwaysApply: true
 2. **Step 2 — 비텍스트 추출**: 표·블록 수식·알고리즘/의사코드는 **텍스트 추출 없이 이미지 크롭만**. 표는 PyMuPDF `page.get_pixmap(clip=rect)`로 해당 영역을 직접 크롭. **그림(Figure)도 도식·사진만 포함하도록 크롭**하고, 주변 본문·헤더·영문 캡션은 이미지에 넣지 않는다(좌표는 텍스트 블록 bbox·임베디드 이미지 rect로 결정). 캡션은 메타데이터로 분리 → `assets_manifest.json`.
 3. **Step 3 — 이미지 추출 휴먼 리뷰**: 터미널에 체크리스트 출력 후 **일시 정지**. 사용자가 `output/assets/` 확인. 승인("OK"/"승인")까지 Step 4로 진행하지 않음. 수정 요청 시 Step 2로 회귀.
 4. **Step 3.5 — 용어집**: `glossary.json` 자동 생성.
-5. **Step 4 — 2패스 번역**: 섹션 단위. `translator` 규칙 준수. 참고문헌은 번역하지 않음. 인라인 수식 `$...$` 보존.
+5. **Step 4 — 2패스 번역**: 섹션 단위. `translator` 규칙 준수. 참고문헌은 번역하지 않음. 인라인 수식 `$...$` 보존. **반드시 에이전트(LLM)가 직접 번역한다(§ 대용량 점진 번역 참조).**
 6. **Step 5 — Typst 생성·컴파일**: `typst-coder` 규칙. `typst compile`은 스크립트 실행. 실패 시 에러 로그 분석 후 소스 수정, **최대 3회**. 초과 시 중단·사용자 알림. 조판 시 **한글 가독성**: 줄간·단락 간 여유, 배열(왼쪽 정렬), `hyphenate: false`, 필요 시 `#show regex("[가-힣a-zA-Z0-9]+"): it => box(it)`로 토큰 단위 줄바꿈 제한(`typst-coder` 참고).
 7. **Step 6 — 최종 휴먼 리뷰**: `final_translated.pdf` 확인. 피드백 시 부분 수정·재컴파일. "완료"로 종료.
+
+---
+
+## 대용량 점진 번역 (PDF ≥ 15 페이지)
+
+### 금지 사항
+
+- **기계 번역(Machine Translation) 도구를 번역 본문에 사용하지 않는다.** `deep-translator`, Google Translate API, DeepL API 등 외부 MT 서비스로 본문을 번역하는 것은 **금지**한다. 번역은 **반드시 에이전트(LLM)가 직접** 수행한다.
+- MT 스크립트(`entropy_typst_build.py` 등)는 과거 호환용으로만 보관하며, 번역 파이프라인에서 호출하지 않는다.
+
+### 분할 전략
+
+대용량 논문은 한 세션에서 전체를 끝내기 어려울 수 있다. 아래 절차로 **점진적으로** 진행한다.
+
+1. **구간(Batch) 나누기**
+   - 추출된 `extracted_structure.json`의 텍스트 블록을 **논리 절(Part / Section / §)** 단위로 나눈다. 페이지 단위가 아니라 **논리 구획** 기준이다.
+   - 절별 `.typ`(또는 `.txt`) 파일로 나눠 `output/{슬러그}/src/sections/` 에 저장한다.
+   - 구간의 우선순위: **(1) 도입·Abstract**, **(2) 핵심 정의·정리**, **(3) 실험·결론**, **(4) 부록·참고문헌**.
+
+2. **Batch 단위 2패스 번역**
+   - 한 Batch(절 하나 또는 인접 절 몇 개)를 **에이전트가 직접** 1패스 → 2패스로 번역한다.
+   - 번역 결과를 해당 절 파일에 저장하고, `progress.json`에 완료 Batch를 기록한다.
+   - Batch 완료 후 중간 Typst 컴파일로 조판 이상 여부를 점검할 수 있다.
+
+3. **세션 경계 처리**
+   - 한 세션에서 모든 Batch를 끝내지 못하면 **현재까지 완료된 절만 포함한 PDF를 빌드**하고, `progress.json`에 미완 절을 `"pending_sections"`로 남긴다.
+   - 다음 세션에서 `progress.json`을 읽고 이어서 진행한다.
+   - **아직 번역하지 않은 절은 빈 파일로 두거나 원문(영문)을 그대로 넣되, MT 초안으로 채우지 않는다.**
+
+4. **사용자 안내**
+   - 대용량 파일 감지 시 첫 응답에서 **예상 Batch 수**, **우선순위 구간**, **세션당 처리 가능 범위**를 안내한다.
+   - 예: "이 논문은 55페이지·5개 Part로 구성되어 있습니다. 우선순위 순서로 Part I부터 번역을 시작하며, 이번 세션에서는 Part I–II를 목표로 합니다."
+
+### `progress.json` 확장 필드
+
+```json
+{
+  "source_type": "pdf",
+  "slug": "...",
+  "total_sections": 5,
+  "completed_sections": ["intro", "part1"],
+  "pending_sections": ["part2", "part3", "conclusion"],
+  "current_batch": "part2",
+  "mt_used": false
+}
+```
+
+`"mt_used"` 필드는 항상 `false`여야 한다.
 
 ---
 

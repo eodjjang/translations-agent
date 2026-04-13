@@ -1,0 +1,10 @@
+{
+  "information": { "ko": "정보", "context": "일반" },
+  "entropy": { "ko": "엔트로피", "context": "정보 이론" },
+  "channel capacity": { "ko": "채널 용량", "context": "이산 채널" },
+  "noise": { "ko": "잡음", "context": "채널" },
+  "stochastic process": { "ko": "확률과정", "context": "정보원" },
+  "discrete channel": { "ko": "이산 채널", "context": "Part I" },
+  "source": { "ko": "정보원", "context": "통신" },
+  "bit": { "ko": "비트", "context": "단위" }
+}

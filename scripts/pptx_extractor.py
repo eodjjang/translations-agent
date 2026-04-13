@@ -33,6 +33,18 @@ def slug_from_stem(stem: str) -> str:
     return stem
 
 
+def _run_color_rgb(font) -> str | None:
+    """Theme/scheme colors may not expose .rgb; return None if unavailable."""
+    try:
+        c = font.color
+        if c is None:
+            return None
+        rgb = c.rgb
+        return str(rgb) if rgb is not None else None
+    except (AttributeError, TypeError, ValueError):
+        return None
+
+
 def extract_slides(pptx_path: Path) -> list[dict]:
     """슬라이드별 텍스트 프레임 정보를 추출한다."""
     prs = Presentation(str(pptx_path))
@@ -56,8 +68,9 @@ def extract_slides(pptx_path: Path) -> list[dict]:
                         "bold": font.bold,
                         "italic": font.italic,
                     }
-                    if font.color and font.color.rgb:
-                        run_info["color_rgb"] = str(font.color.rgb)
+                    crgb = _run_color_rgb(font)
+                    if crgb:
+                        run_info["color_rgb"] = crgb
                     runs.append(run_info)
 
                 paragraphs.append({

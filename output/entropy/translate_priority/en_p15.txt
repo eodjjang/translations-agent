@@ -1,0 +1,129 @@
+this neighborhood. One is by calculation of the entropy of the approximations to English. A second method
+is to delete a certain fraction of the letters from a sample of English text and then let someone attempt to
+restore them. If they can be restored when 50% are deleted the redundancy must be greater than 50%. A
+third method depends on certain known results in cryptography.
+Two extremes of redundancy in English prose are represented by Basic English and by James Joyce’s
+book “Finnegans Wake”. The Basic English vocabulary is limited to 850 words and the redundancy is very
+high. This is reflected in the expansion that occurs when a passage is translated into Basic English. Joyce
+on the other hand enlarges the vocabulary and is alleged to achieve a compression of semantic content.
+The redundancy of a language is related to the existence of crossword puzzles. If the redundancy is
+zero any sequence of letters is a reasonable text in the language and any two-dimensional array of letters
+forms a crossword puzzle. If the redundancy is too high the language imposes too many constraints for large
+crossword puzzles to be possible. A more detailed analysis shows that if we assume the constraints imposed
+by the language are of a rather chaotic and random nature, large crossword puzzles are just possible when
+the redundancy is 50%. If the redundancy is 33%, three-dimensional crossword puzzles should be possible,
+etc.
+
+8. REPRESENTATION OF THE ENCODING AND DECODING OPERATIONS
+
+We have yet to represent mathematically the operations performed by the transmitter and receiver in en-
+coding and decoding the information. Either of these will be called a discrete transducer. The input to the
+transducer is a sequence of input symbols and its output a sequence of output symbols. The transducer may
+have an internal memory so that its output depends not only on the present input symbol but also on the past
+history. We assume that the internal memory is finite, i.e., there exist a finite number m of possible states of
+the transducer and that its output is a function of the present state and the present input symbol. The next
+state will be a second function of these two quantities. Thus a transducer can be described by two functions:
+
+yn
+
+= f
+(xn
+
+;
+�n
+
+)
+
+= g (xn
+
+�n +1
+
+;
+�n
+
+)
+
+where
+
+xn is the nth input symbol,
+
+�n is the state of the transducer when the nth input symbol is introduced,
+
+yn is the output symbol (or sequence of output symbols) produced when xn is introduced if the state is
+�n.
+
+If the output symbols of one transducer can be identified with the input symbols of a second, they can be
+connected in tandem and the result is also a transducer. If there exists a second transducer which operates
+on the output of the first and recovers the original input, the first transducer will be called non-singular and
+the second will be called its inverse.
+Theorem 7: The output of a finite state transducer driven by a finite state statistical source is a finite
+state statistical source, with entropy (per unit time) less than or equal to that of the input. If the transducer
+is non-singular they are equal.
+Let
+�represent the state of the source, which produces a sequence of symbols xi; and let
+�be the state of
+the transducer, which produces, in its output, blocks of symbols yj. The combined system can be represented
+by the “product state space” of pairs
+(�;
+�
+). Two points in the space
+(�1
+
+), are connected by
+a line if
+�1 can produce an x which changes
+�1 to
+�2, and this line is given the probability of that x in this
+case. The line is labeled with the block of yj symbols produced by the transducer. The entropy of the output
+can be calculated as the weighted sum over the states. If we sum first on
+�each resulting term is less than or
+equal to the corresponding term for
+�, hence the entropy is not increased. If the transducer is non-singular
+let its output be connected to the inverse transducer. If H
+
+) and
+(�2
+
+;
+�1
+
+;
+�2
+
+0
+3 are the output entropies of the source,
+the first and second transducers respectively, then H
+
+0
+1, H
+
+0
+2 and H
+
+0
+1 and therefore H
+
+0
+2.
+
+�H
+
+�H
+
+= H
+
+= H
+
+0
+1
+
+0
+2
+
+0
+3
+
+0
+1
+
+15

@@ -5,3 +5,5 @@ Pillow>=10.0.0
 requests>=2.31.0
 # PPTX 텍스트 추출·삽입
 python-pptx>=1.0.0
+# 대용량 PDF 페이지 단위 자동 번역(선택, entropy_typst_build.py)
+# deep-translator>=1.11.4
